@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'movie/index'
+
+  get 'movie/show'
+
+  get 'tv/index'
+
+  get 'tv/show'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
