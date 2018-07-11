@@ -73,6 +73,8 @@ GEM
       thor (~> 0.14)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    httparty (0.15.5)
+      multi_xml (>= 0.5.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jquery-rails (4.3.3)
@@ -89,6 +91,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    multi_xml (0.6.0)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     pg (1.0.0)
@@ -204,6 +207,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
+  httparty
   jquery-rails
   pg
   pry-rails
