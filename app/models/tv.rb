@@ -9,5 +9,8 @@ class Tv
     get("/discover/tv", query: {sort_by: "popularity.desc"})
   end
 
+  def self.all(page, sort)
+    get("/discover/tv", query: {sort_by: sort, page: page})
+  end
 
 end
