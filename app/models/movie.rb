@@ -6,7 +6,7 @@ class Movie
   format :json
 
   def self.popular_tv
-    get("/discover/tv")
+    get("/discover/tv", query: {sort_by: "popularity.desc"})
   end
 
 
