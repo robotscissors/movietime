@@ -2,16 +2,21 @@
 <html>
 <head>
   <title>MovieTime</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= form_tag(search_index_path method: :post) do %>
-    Search <%= text_field_tag :query, params[:query] %>
-    <%= submit_tag 'Search' %>
-  <% end %>
-<%= yield %>
+  <div class="container">
 
+
+
+      <%= form_tag(search_index_path method: :post, class: "form-inline") do %>
+        Search <%= text_field_tag :query, params[:query], class: "form-control" %>
+        <%= submit_tag 'Search', class: "btn btn-success" %>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 </html>
