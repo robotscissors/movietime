@@ -4,19 +4,33 @@
   <title>MovieTime</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Anton|Oswald' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="container">
-
-
-
-      <%= form_tag(search_index_path method: :post, class: "form-inline") do %>
-        Search <%= text_field_tag :query, params[:query], class: "form-control" %>
-        <%= submit_tag 'Search', class: "btn btn-success" %>
-    <% end %>
-    <%= yield %>
+  </head>
+  <body>
+    <header>
+        <h2>Movie Time</h2>
+        <nav>
+          <li>About</li>
+          <li>Poplular TV</li>
+          <li>Movies</li>
+          <li>Contact Us</li>
+          <li><%= form_tag(search_index_path method: :post) do %>
+          <%= text_field_tag :query, params[:query], class: 'text-field'%>
+          <%= submit_tag 'Search', class: 'btn-submit' %>
+          <% end %></li>
+      </nav>
+    </header>
+  <div class = "main">
+    <section id="content">
+      <%= yield %>
+    </section>
   </div>
-</body>
+    <footer>
+      <p>Based on the movie database service API: <a href="https://www.themoviedb.org/">The Movie DB</a></p>
+      <p>&copy;2018 Christopher Bazin</p>
+    </footer>
+  </body>
 </html>
