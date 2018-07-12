@@ -1,6 +1,6 @@
 class TvController < ApplicationController
   def index
-    @page = params[:page].to_i
+    @page = params[:page]
     @sort = params[:sort]
     @page ||= 1
     @sort ||= "popularity.desc"
@@ -11,7 +11,12 @@ class TvController < ApplicationController
   end
 
   def show
-
+    @tv_id = params[:tv_id].to_i
+    if @tv_id
+      @tv_program = Tv.one(@tv_id) #returns the details for one show
+    else
+      #render the index template
+    end
   end
 
 

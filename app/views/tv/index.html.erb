@@ -2,6 +2,7 @@
 <p>Find me in app/views/tv/index.html.erb</p>
 <% @all_tv_programs.each do |program| %>
   <%= program['original_name'] %><br/>
+  <%= link_to "more info", root_url + 'tv/show?' + {tv_id: program['id']}.to_param, method: :get %><br />
   <%= image_tag("https://image.tmdb.org/t/p/w200/#{program['poster_path']}", :alt => "Image of #{program['original_name']}") %><br/>
 <% end %>
 <%= link_to "Go Back", root_url + 'tv/index?' + {page: @back_page, param: @sort}.to_param, method: :get  if @back_page %><br />

@@ -13,4 +13,7 @@ class Tv
     get("/discover/tv", query: {sort_by: sort, page: page})
   end
 
+  def self.one(tv_id)
+    get("/tv/#{tv_id}",query: {})
+  end
 end
