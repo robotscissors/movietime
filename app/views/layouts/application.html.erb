@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <%= form_tag(search_index_path method: :post) do %>
+    Search <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag 'Search' %>
+  <% end %>
 <%= yield %>
 
 </body>

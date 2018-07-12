@@ -1,0 +1,18 @@
+<h1>Search Results</h1>
+
+<p>Total results: <%= @total_results %></p>
+<% @search_results.each do |result| %>
+  <%= "#{result['media_type']} - #{result['title']}" if result['media_type'] === 'movie' %>
+  <%= "#{result['media_type']} - #{result['name']}" if result['media_type'] === 'tv' %>
+  <%= "#{result['media_type']} - #{result['name']}" if result['media_type'] === 'person' %>
+  <%= link_to "more info", root_url + 'tv/show?' + {tv_id: result['id']}.to_param, method: :get if result['media_type'] === 'tv'%><br />
+<% end %>
+<p>
+  <% 1.upto(@total_pages) do |x| %>
+    <% if x === @page %>
+    <u><%= "#{x}" %></u>
+    <% else %>
+    <%= link_to "#{x}", root_url + 'search/index?'+ {query: @search_query, page: x}.to_param, method: :get  %>
+    <% end %>
+  <% end %>
+</p>
