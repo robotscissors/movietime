@@ -111,6 +111,10 @@ p {
   font-family: 'Oswald','Open Sans';
 }
 
+p.subline {
+  margin-bottom: 10px;
+}
+
 h1, h2 {
   font-family: 'Anton', sans-serif;
 }
@@ -118,6 +122,22 @@ h1 {
   font-size: 4rem;
   margin-bottom: 4px;
 }
+h2 {
+  margin-top: 50px;
+}
+.more {
+  color: #000;
+  text-align: right;
+  padding: 10px 50px 20px 0px;
+  display: block;
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, .7);
+  a {
+    text-decoration: none;
+  }
+}
+
+
 /*--------------
 footer
 --------------*/
@@ -132,9 +152,17 @@ footer {
   align-items: center;
   margin-top: 100px;
 }
-@media(max-width: 1000px){
+@media(max-width: 1260px){
   header {
-      padding: 35px 50px;
+    padding: 35px 50px;
+    .text-field{
+      padding: 3px;
+      width: 150px;
+    }
+    nav li:last-child {
+          margin-right:0;
+          margin-left: 40px;
+    }
   }
 }
 
@@ -145,5 +173,6 @@ footer {
       margin-top: 10px;
       margin-bottom: 15px;
     }
+
   }
 }

@@ -1,10 +1,11 @@
 <h1>Popular TV Shows</h1>
-<p>These are the most popular TV results</p>
+<p class="subline">These are the most popular TV results</p>
   <div class = "popularX5">
     <% @popular_tv.each do |program| %>
       <!-- <%= program['original_name'] %><br/> -->
-      <%= image_tag("https://image.tmdb.org/t/p/w200/#{program['poster_path']}", :alt => "Image of #{program['original_name']}", class: "poster") %>
+      <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{program['poster_path']}", :alt => "Image of #{program['original_name']}", class: "poster"), root_url + 'tv/show?' + {tv_id: program['id']}.to_param, method: :get %>
     <% end %>
   </div>
+  <span><%= link_to "Wanna see all the popular shows?", root_url + tv_index_path, class: "more" %></span>
 <h2>Title 2</h2>
 <p>more information about what this does</p>
