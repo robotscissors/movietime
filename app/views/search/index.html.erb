@@ -6,19 +6,19 @@
       <% case result['media_type'] %>
       <%  when 'movie' %>
             <% if result['poster_path'] %>
-              <%= image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['original_name']}") %>
+              <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['original_name']}"), root_url + 'movie/show?' + {movie_id: result['id']}.to_param, method: :get  %>
             <% else %>
               <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
             <% end %>
       <%  when 'tv' %>
             <% if result['poster_path'] %>
-              <%= image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['original_name']}")  %>
+              <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['original_name']}"), root_url + 'tv/show?' + {tv_id: result['id']}.to_param, method: :get   %>
             <% else %>
               <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
             <% end %>
       <%  when 'person' %>
             <% if result['profile_path'] %>
-              <%= image_tag("https://image.tmdb.org/t/p/w200/#{result['profile_path']}", :alt => "Image of #{result['name']}") %>
+              <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{result['profile_path']}", :alt => "Image of #{result['name']}") , root_url + 'person/show?' + {person_id: result['id']}.to_param, method: :get %>
             <% else %>
               <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
             <% end %>

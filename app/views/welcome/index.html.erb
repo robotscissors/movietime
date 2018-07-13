@@ -1,20 +1,28 @@
 <h1>Popular TV Shows</h1>
 <p class="subline">These are the most popular TV results</p>
+<div class = "popularX5">
+  <% @popular_tv.each do |program| %>
+    <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{program['poster_path']}", :alt => "Image of #{program['original_name']}", class: "poster"), root_url + 'tv/show?' + {tv_id: program['id']}.to_param, method: :get %>
+  <% end %>
+</div>
+<span><%= link_to "Wanna see all the popular shows?", root_url + tv_index_path, class: "more" %></span>
+
+<h1>Popular Movies</h1>
+<p class="subline">These are HOTTEST movies right now</p>
   <div class = "popularX5">
-    <% @popular_tv.each do |program| %>
-      <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{program['poster_path']}", :alt => "Image of #{program['original_name']}", class: "poster"), root_url + 'tv/show?' + {tv_id: program['id']}.to_param, method: :get %>
+    <% @popular_movie.each do |movie| %>
+      <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{movie['poster_path']}", :alt => "Image of #{movie['original_name']}", class: "poster"), root_url + 'movie/show?' + {movie_id: movie['id']}.to_param, method: :get %>
     <% end %>
   </div>
-  <span><%= link_to "Wanna see all the popular shows?", root_url + tv_index_path, class: "more" %></span>
+  <span><%= link_to "Wanna see all the popular movies?", root_url + movie_index_path, class: "more" %></span>
 
-  <h1>Popular Movies</h1>
-  <p class="subline">These are HOTTEST movies right now</p>
-    <div class = "popularX5">
-      <% @popular_movie.each do |movie| %>
-        <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{movie['poster_path']}", :alt => "Image of #{movie['original_name']}", class: "poster"), root_url + 'movie/show?' + {movie_id: movie['id']}.to_param, method: :get %>
-      <% end %>
-    </div>
-    <span><%= link_to "Wanna see all the popular movies?", root_url + movie_index_path, class: "more" %></span>
+<h1>The Hottest Actors</h1>
+<div class = "popularX5">
+  <% @popular_people.each do |person| %>
+    <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{person['profile_path']}", :alt => "Image of #{person['name']}", class: "poster"), root_url + 'person/show?' + {person_id: person['id']}.to_param, method: :get %>
+  <% end %>
+</div>
+<span><%= link_to "Look at the most popular actors.", root_url + person_index_path, class: "more" %></span>
 
 
 <h2>Title 2</h2>

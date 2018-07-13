@@ -1,0 +1,11 @@
+<h1>Your most popular people!</h1>
+<p class="subline">Voted on by you!</p>
+<div class = "popularX5">
+  <% @people.each do |person| %>
+    <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{person['profile_path']}", :alt => "Image of #{person['profile_path']}"), root_url + 'person/show?' + {person_id: person['id']}.to_param, method: :get %>
+  <% end %>
+</div>
+<div class="more">
+  <%= link_to "Back", root_url + 'person/index?' + {page: @back_page, param: @sort}.to_param, class: "previous", method: :get if @back_page %>
+  <%= link_to "Next", root_url + 'person/index?' + {page: @next_page, param: @sort}.to_param, class: "next", method: :get %>
+</div>

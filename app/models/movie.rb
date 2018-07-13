@@ -16,7 +16,4 @@ class Movie
   def self.one(movie_id)
     get("/movie/#{movie_id}",query: {})
   end
-
-
-
 end

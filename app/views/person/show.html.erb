@@ -1,0 +1,13 @@
+<h1>Biography</h1>
+<p class="subline">Voted on by people like you!</p>
+<h2><%= @person['name'] %></h2>
+<%= "Birthday:#{@person['birthday']}" %>
+<%= "Place of Birth:  #{@person['place_of_birth']}" %>
+<%= "Died on: #{@person['deathday']}" if @person['deathday'] %>
+<% if @person['profile_path'] %>
+  <%= image_tag("https://image.tmdb.org/t/p/w500/#{@person['profile_path']}", :alt => "Image of #{@person['name']}") %>
+<% else %>
+  <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
+<% end %>
+<h3>Biography:</h3>
+<%= @person['biography'] %>
