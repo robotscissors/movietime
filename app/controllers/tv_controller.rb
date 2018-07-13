@@ -13,7 +13,7 @@ class TvController < ApplicationController
   def show
     @tv_id = params[:tv_id].to_i
     if @tv_id
-      @tv_program = Tv.one(@tv_id) #returns the details for one show
+      @tv_program = Tv.one(@tv_id) #returns the details for one show\
     else
       #render the index template
     end

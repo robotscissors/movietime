@@ -1,8 +1,19 @@
-<h1>Tv#show</h1>
-<p class="subline">Find me in app/views/tv/show.html.erb</p>
+<h1>Details</h1>
+<div class = "details">
+  <div class = "detail-text">
+    <h2><%= "#{@tv_program['original_name']}" %></h2>
+    <p><%= "Series status: #{@tv_program['status']}" %></p>
+    <p><%= "Vote Average: #{@tv_program['vote_average']}" %></p>
+    <p><%= "#{@tv_program['overview']}" %></p>
+  </div>
+  <div class = "detail-image">
+    <%= image_tag("https://image.tmdb.org/t/p/w500/#{@tv_program['poster_path']}", :alt => "Image of #{@tv_program['original_name']}") %>
+  </div>
+</div>
+<h2>Season Information</h2>
 <% @tv_program['seasons'].each do |season| %>
   <p>
-    <%= season['name'] %><br />
+    <h3><%= season['name'] if season['overview']%></h3>
     <%= season['overview'] %>
   </p>
 <% end %>
