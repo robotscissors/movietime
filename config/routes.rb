@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   post 'search/index'
   get 'search/index'
-  
+
   get 'movie/index'
 
   get 'movie/show'
@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get 'tv/show'
 
   get 'welcome/index'
-
+  get 'welcome/about'
+  get 'welcome/contact'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

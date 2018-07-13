@@ -11,12 +11,12 @@
   </head>
   <body>
     <header>
-        <h2>Movie Time</h2>
+        <h2><%= link_to "Movie Time", root_url %></h2>
         <nav>
-          <li>About</li>
-          <li>Poplular TV</li>
+          <li><%= link_to "About",welcome_about_path %></li>
+          <li><%= link_to "Popular TV",tv_index_path %></li>
           <li>Movies</li>
-          <li>Contact Us</li>
+          <li><%= link_to "Contact Us",welcome_contact_path %></li>
           <li><%= form_tag(search_index_path method: :post) do %>
           <%= text_field_tag :query, params[:query], class: 'text-field'%>
           <%= submit_tag 'Search', class: 'btn-submit' %>

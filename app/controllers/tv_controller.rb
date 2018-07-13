@@ -1,8 +1,8 @@
 class TvController < ApplicationController
   def index
-    @page = params[:page]
+    @page = params[:page].to_i
     @sort = params[:sort]
-    @page ||= 1
+    @page = 1 if @page === 0
     @sort ||= "popularity.desc"
     @all_tv_programs = Tv.all(@page,@sort)['results'] #returns 20
     #page management

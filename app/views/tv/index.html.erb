@@ -6,6 +6,6 @@
 <% end %>
 </div>
 <div class="more">
-  <%= link_to "Go Back", root_url + 'tv/index?' + {page: @back_page, param: @sort}.to_param, method: :get  if @back_page %><br />
-  <%= link_to "Next Page", root_url + 'tv/index?' + {page: @next_page, param: @sort}.to_param, method: :get %>
+  <%= link_to "Back", root_url + 'tv/index?' + {page: @back_page, param: @sort}.to_param, class: "previous", method: :get if @back_page %>
+  <%= link_to "Next", root_url + 'tv/index?' + {page: @next_page, param: @sort}.to_param, class: "next", method: :get %>
 </div>
