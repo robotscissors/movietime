@@ -1,13 +1,33 @@
 <h1>Search Results</h1>
-
 <p>Total results: <%= @total_results %></p>
-<% @search_results.each do |result| %>
-  <%= "#{result['media_type']} - #{result['title']}" if result['media_type'] === 'movie' %>
-  <%= "#{result['media_type']} - #{result['name']}" if result['media_type'] === 'tv' %>
-  <%= "#{result['media_type']} - #{result['name']}" if result['media_type'] === 'person' %>
-  <%= link_to "more info", root_url + 'tv/show?' + {tv_id: result['id']}.to_param, method: :get if result['media_type'] === 'tv'%><br />
-<% end %>
-<p>
+<div class="results">
+  <% @search_results.each do |result| %>
+    <div class="result-item">
+      <% case result['media_type'] %>
+      <%  when 'movie' %>
+            <% if result['poster_path'] %>
+              <%= image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['original_name']}") %>
+            <% else %>
+              <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
+            <% end %>
+      <%  when 'tv' %>
+            <% if result['poster_path'] %>
+              <%= image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['original_name']}")  %>
+            <% else %>
+              <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
+            <% end %>
+      <%  when 'person' %>
+            <% if result['profile_path'] %>
+              <%= image_tag("https://image.tmdb.org/t/p/w200/#{result['profile_path']}", :alt => "Image of #{result['name']}") %>
+            <% else %>
+              <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
+            <% end %>
+      <% end %>
+
+    </div>
+  <% end %>
+</div>
+<div class="pagination">
   <% 1.upto(@total_pages) do |x| %>
     <% if x === @page %>
     <u><%= "#{x}" %></u>
@@ -15,4 +35,4 @@
     <%= link_to "#{x}", root_url + 'search/index?'+ {query: @search_query, page: x}.to_param, method: :get  %>
     <% end %>
   <% end %>
-</p>
+</div>
