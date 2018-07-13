@@ -1,2 +1,13 @@
-<h1>Movie#show</h1>
-<p>Find me in app/views/movie/show.html.erb</p>
+<h1>Details</h1>
+<div class = "details">
+  <div class = "detail-text">
+    <h2><%= "#{@movie['title']}" %></h2>
+    <p><%= "Series status: #{@movie['status']}" %></p>
+    <p><%= "Vote Average: #{@movie['vote_average']}" %></p>
+    <p><%= "Vote Average: #{@movie['release_Date']}" %></p>
+    <p><%= "#{@movie['overview']}" %></p>
+  </div>
+  <div class = "detail-image">
+    <%= image_tag("https://image.tmdb.org/t/p/w500/#{@movie['poster_path']}", :alt => "Image of #{@movie['original_name']}") %>
+  </div>
+</div>

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'movie/index'
+
+  get 'movie/show'
+
   post 'search/index'
   get 'search/index'
 

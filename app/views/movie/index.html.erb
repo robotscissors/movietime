@@ -1,2 +1,11 @@
-<h1>Movie#index</h1>
-<p>Find me in app/views/movie/index.html.erb</p>
+<h1>The Most Popular Movies</h1>
+<p class="subline">Voted on by people like you!</p>
+<div class = "popularX5">
+  <% @all_movies.each do |movie| %>
+    <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{movie['poster_path']}", :alt => "Image of #{movie['original_name']}"), root_url + 'movie/show?' + {movie_id: movie['id']}.to_param, method: :get %>
+  <% end %>
+</div>
+<div class="more">
+  <%= link_to "Back", root_url + 'movie/index?' + {page: @back_page, param: @sort}.to_param, class: "previous", method: :get if @back_page %>
+  <%= link_to "Next", root_url + 'movie/index?' + {page: @next_page, param: @sort}.to_param, class: "next", method: :get %>
+</div>

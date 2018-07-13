@@ -15,7 +15,7 @@
         <nav>
           <li><%= link_to "About",welcome_about_path %></li>
           <li><%= link_to "Popular TV",tv_index_path %></li>
-          <li>Movies</li>
+          <li><%= link_to "Movies",movie_index_path %></li>
           <li><%= link_to "Contact Us",welcome_contact_path %></li>
           <li><%= form_tag(search_index_path method: :post) do %>
           <%= text_field_tag :query, params[:query], class: 'text-field'%>
