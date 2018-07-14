@@ -8,11 +8,11 @@
         <%  when 'movie' %>
           <div class = "profile-image">
               <% if result['poster_path'] %>
-                <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['original_name']}"), root_url + 'movie/show?' + {movie_id: result['id']}.to_param, method: :get  %>
+                <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{result['poster_path']}", :alt => "Image of #{result['title']}"), root_url + 'movie/show?' + {movie_id: result['id']}.to_param, method: :get  %>
               <% else %>
                 <%= link_to image_tag("image-not-available.jpg", :alt => "Image not available."), root_url + 'movie/show?' + {movie_id: result['id']}.to_param, method: :get  %>
                 <div class="bottom-left">
-                  <%= "#{result['original_name']}" %>
+                  <%= "#{result['title']}" %>
                 </div>
               <% end %>
           </div>

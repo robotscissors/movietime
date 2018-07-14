@@ -1,7 +1,7 @@
 <h1>More about the TV program</h1>
 <div class = "details">
   <div class = "detail-image">
-    <%= image_tag("https://image.tmdb.org/t/p/w500/#{@tv_program['poster_path']}", :alt => "Image of #{@tv_program['original_name']}") %>
+    <%= image_tag("https://image.tmdb.org/t/p/w500/#{@tv_program['poster_path']}", :alt => "Image of #{@tv_program['original_name']}") if !@tv_program['poster_path'].nil? %>
   </div>
   <h2><%= "#{@tv_program['original_name']}" %></h2>
   <p>[<%= @tv_program['status'] %>]</p>

@@ -52,11 +52,18 @@ header {
 header nav {
   display: flex;
   a {
+    color:#000;
     text-decoration: none;
   }
-  a:visited {color:#000;}  /* visited link */
-  a:hover {color:#000;}  /* mouse over link */
-  a:active {color:#000;}
+  a:visited {
+    color:#000;
+  }  /* visited link */
+  a:hover {
+    color:#000;
+  }  /* mouse over link */
+  a:active {
+    color:#000;
+  }
   li {
     margin:0 15px;
     font-size: 1.3rem;
