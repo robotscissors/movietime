@@ -21,6 +21,7 @@ gem 'turbolinks'
 gem 'figaro'
 gem 'httparty'
 gem 'normalize-rails'
+gem 'font-awesome-sass', '~> 5.0.13'
 
 group :development, :test do
   gem 'byebug'
@@ -28,6 +29,5 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda'
   gem 'faker'
-  gem 'factory_girl_rails'
   gem 'pry-rails'
 end

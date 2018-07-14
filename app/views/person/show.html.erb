@@ -3,8 +3,6 @@
   <div class = "detail-image">
     <% if @person['profile_path'] %>
       <%= image_tag("https://image.tmdb.org/t/p/w500/#{@person['profile_path']}", :alt => "Image of #{@person['name']}") %>
-    <% else %>
-      <%= image_tag("image-not-available.jpg", :alt => "Image not available.") %>
     <% end %>
   </div>
   <h2><%= @person['name'] %></h2></p>
