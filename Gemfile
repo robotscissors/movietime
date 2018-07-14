@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'shoulda'
   gem 'faker'
   gem 'pry-rails'

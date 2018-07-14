@@ -8,10 +8,9 @@ RSpec.describe WelcomeController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
-    it "renders the template" do
+    it "it returns popular shows" do
       get :index
-      expect(response).to render_template(:index)
+      expect(response).to render_template("index")
     end
   end
-
 end
