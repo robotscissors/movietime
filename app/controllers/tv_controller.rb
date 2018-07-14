@@ -15,7 +15,7 @@ class TvController < ApplicationController
     if @tv_id
       @tv_program = Tv.one(@tv_id) #returns the details for one show\
     else
-      #render the index template
+      
     end
   end
 

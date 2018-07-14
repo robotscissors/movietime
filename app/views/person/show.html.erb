@@ -6,8 +6,8 @@
     <% end %>
   </div>
   <h2><%= @person['name'] %></h2></p>
-  <p><%= "Birthday:#{@person['birthday']}" %></p>
-  <p><%= "Place of Birth:  #{@person['place_of_birth']}" %></p>
+  <p><%= "Birthday: #{@person['birthday']}" if @person['birthday'] %></p>
+  <p><%= "Place of Birth: #{@person['place_of_birth']}" if @person['place_of_birth']%></p>
   <p><%= "Died on: #{@person['deathday']}" if @person['deathday'] %></p>
   <h3>Biography:</h3>
   <p><%= @person['biography'] %></p>

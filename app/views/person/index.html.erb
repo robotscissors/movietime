@@ -2,7 +2,12 @@
 <p class="subline">Voted on by you!</p>
 <div class = "popularX5">
   <% @people.each do |person| %>
-    <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{person['profile_path']}", :alt => "Image of #{person['profile_path']}"), root_url + 'person/show?' + {person_id: person['id']}.to_param, method: :get %>
+    <div class = "profile-image">
+      <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{person['profile_path']}", :alt => "Image of #{person['name']}"), root_url + 'person/show?' + {person_id: person['id']}.to_param, method: :get %>
+      <div class="bottom-left">
+        <%= "#{person['name']}" %>
+      </div>
+    </div>
   <% end %>
 </div>
 <div class="more">

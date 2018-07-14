@@ -19,7 +19,12 @@
 <h1>The Hottest Actors</h1>
 <div class = "popularX5">
   <% @popular_people.each do |person| %>
-    <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{person['profile_path']}", :alt => "Image of #{person['name']}", class: "poster"), root_url + 'person/show?' + {person_id: person['id']}.to_param, method: :get %>
+    <div class = "profile-image">
+      <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{person['profile_path']}", :alt => "Image of #{person['name']}", class: "poster"), root_url + 'person/show?' + {person_id: person['id']}.to_param, method: :get %>
+      <div class="bottom-left">
+        <%= "#{person['name']}" %>
+      </div>
+    </div>
   <% end %>
 </div>
 <span><%= link_to "Look at the most popular actors.", root_url + person_index_path, class: "more" %></span>
