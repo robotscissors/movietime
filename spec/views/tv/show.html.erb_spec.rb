@@ -7,8 +7,8 @@ RSpec.describe "tv/show.html.erb", type: :view do
     @reviews = Tv.reviews(@tv_id)['results'].take(3)
   end
 
-  describe "GET #index view of popular TV shows" do
-    it "Returns the correct page Popular TV Shows" do
+  describe "GET #index view of a singular popular TV shows" do
+    it "Returns the correct page TV Show (121)" do
       render
       expect(rendered).to match /More about the TV program/
       expect(rendered).to match /Doctor Who/
@@ -18,6 +18,9 @@ RSpec.describe "tv/show.html.erb", type: :view do
     end
     it "returns a set of reviews (for this tv show)" do
       expect(@reviews).not_to be_empty
+    end
+    it "Does return an image URL" do
+      expect(@tv_program['poster_path']).to be_truthy
     end
   end
 
