@@ -2,12 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .details {
-
-
-}
-.detail-text {
-
+  width: 85%;
+  p{
+    padding-top:5px;
+  }
+  h2{
+    font-size: 2rem;
+  }
 }
 .detail-image {
+  float: right;
+  padding: 0px 5px 50px 50px;
+}
 
+.series-info {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  padding-top: 20px;
+}
+
+
+@media(max-width: 1260px){
+  .detail-image {
+    width:100%;
+    padding: 0px 40px 50px 40px;
+    margin: auto;
+    display: block;
+  }
 }

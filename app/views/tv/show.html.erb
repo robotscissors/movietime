@@ -1,20 +1,24 @@
 <h1>Details</h1>
 <div class = "details">
-  <div class = "detail-text">
-    <h2><%= "#{@tv_program['original_name']}" %></h2>
-    <p><%= "Series status: #{@tv_program['status']}" %></p>
-    <p><%= "Vote Average: #{@tv_program['vote_average']}" %></p>
-    <p><%= "#{@tv_program['overview']}" %></p>
-  </div>
   <div class = "detail-image">
     <%= image_tag("https://image.tmdb.org/t/p/w500/#{@tv_program['poster_path']}", :alt => "Image of #{@tv_program['original_name']}") %>
   </div>
+  <h2><%= "#{@tv_program['original_name']}" %></h2>
+  <p>[<%= @tv_program['status'] %>]</p>
+  <p><%= "Vote Average: #{@tv_program['vote_average']}" %></p>
+  <p><%= "#{@tv_program['overview']}" %></p>
+  <h3>Reviews</h3>
 </div>
-<h2>Season Information</h2>
-<% @tv_program['seasons'].each do |season| %>
-  <p>
-    <h3><%= season['name'] if season['overview']%></h3>
-    <%= season['overview'] %>
-  </p>
-<% end %>
-<h2>Reviews</h2>
+<div style="clear:both"></div>
+<h3>Season Information</h3>
+  <% @tv_program['seasons'].each do |season| %>
+    <p>
+      <h4><%= season['name']%></h4>
+      <p class = "series-info"><% if season['overview'].empty? %>
+        <%= "- No additional information" %>
+      <% else %>
+        <%= "#{season['overview']}" %>
+      <% end %>
+      </p>
+    </p>
+  <% end %>
