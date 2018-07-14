@@ -124,6 +124,7 @@ section {
 
 p {
   font-family: 'Oswald','Open Sans';
+  margin-bottom: 10px;
 }
 
 p.subline {
@@ -139,6 +140,10 @@ h1 {
 }
 h2 {
   margin-top: 50px;
+}
+.subline {
+  font-size: 1.5rem;
+  font-family: 'Anton', sans-serif;
 }
 .more {
   color: #000;
@@ -173,6 +178,15 @@ h2 {
   }
 }
 
+.page-pad-20rem {
+  padding-bottom: 20rem;
+}
+
+.special-message p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-bottom: 1rem;
+}
 
 /*--------------
 footer
@@ -221,6 +235,6 @@ footer {
     }
   }
   .main {
-    padding-top: 18rem;
+    padding-top: 16rem;
   }
 }

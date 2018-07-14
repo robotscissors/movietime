@@ -12,10 +12,12 @@ class TvController < ApplicationController
 
   def show
     @tv_id = params[:tv_id].to_i
+
     if @tv_id
       @tv_program = Tv.one(@tv_id) #returns the details for one show\
+      @reviews = Tv.reviews(@tv_id)['results'].take(3) #take only 3
     else
-      
+      #what happens if there is no parameter Error message
     end
   end
 

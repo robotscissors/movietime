@@ -16,4 +16,8 @@ class Tv
   def self.one(tv_id)
     get("/tv/#{tv_id}",query: {})
   end
+
+  def self.reviews(tv_id)
+    get("/tv/#{tv_id}/reviews",query: {})
+  end
 end
