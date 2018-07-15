@@ -5,16 +5,15 @@ class Person
   default_params api_key: ENV['API_KEY']
   format :json
 
-  def self.one(person_id)
-    get("/person/#{person_id}",query: {})
+  def self.popular
+    get("/person/popular", query: {sort_by: "popularity.desc"})
   end
 
   def self.all(page, sort)
     get("/person/popular", query: {sort_by: sort, page: page})
   end
 
-  def self.popular
-    get("/person/popular", query: {sort_by: "popularity.desc"})
+  def self.one(person_id)
+    get("/person/#{person_id}",query: {})
   end
-
 end

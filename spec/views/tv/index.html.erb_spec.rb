@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "tv/index.html.erb", type: :view do
+
   before(:each) do
     sort = "popularity.desc"
     page = 1
@@ -12,9 +13,9 @@ RSpec.describe "tv/index.html.erb", type: :view do
       render
       expect(rendered).to match /TV\'s Most Popular Shows/
     end
+
     it "returns a dataset" do
       expect(Tv.all("popularity.desc", 1)).not_to be_empty
     end
   end
-
 end

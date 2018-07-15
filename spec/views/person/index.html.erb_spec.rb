@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "person/index.html.erb", type: :view do
+
   before(:each) do
     @sort = "popularity.desc"
     @page = 1
@@ -12,6 +13,7 @@ RSpec.describe "person/index.html.erb", type: :view do
       render
       expect(rendered).to match /Your most popular people!/
     end
+
     it "returns a dataset" do
       expect(@people).not_to be_empty
     end

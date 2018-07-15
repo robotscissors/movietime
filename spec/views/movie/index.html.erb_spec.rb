@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "movie/index.html.erb", type: :view do
+
   before(:each) do
     @page = 1
     @sore = "popularity.desc"
@@ -12,6 +13,7 @@ RSpec.describe "movie/index.html.erb", type: :view do
       render
       expect(rendered).to match /The Most Popular Movies/
     end
+
     it "returns a dataset" do
       expect(@all_movies).not_to be_empty
     end
