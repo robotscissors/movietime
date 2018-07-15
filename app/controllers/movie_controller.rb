@@ -15,7 +15,7 @@ class MovieController < ApplicationController
     if @movie_id
       @movie = Movie.one(@movie_id) #returns the details for one show\
     else
-      #render the index template
+      @errors = "Hmm, I don't know what happened here. Try again."
     end
   end
 end

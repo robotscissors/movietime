@@ -15,7 +15,7 @@ class PersonController < ApplicationController
     if @person_id
       @person = Person.one(@person_id) #returns the details for one show\
     else
-      #render the index template
+      @errors = "Hmm, I don't know what happened here. Try again."
     end
   end
 end

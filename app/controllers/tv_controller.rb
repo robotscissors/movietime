@@ -17,7 +17,7 @@ class TvController < ApplicationController
       @tv_program = Tv.one(@tv_id) #returns the details for one show\
       @reviews = Tv.reviews(@tv_id)['results'].take(3) #take only 3
     else
-      #what happens if there is no parameter Error message
+      @errors = "Hmm, I don't know what happened here. Try again."
     end
   end
 
