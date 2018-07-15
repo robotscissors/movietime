@@ -10,11 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require easy-autocomplete.css
+ *= require easy-autocomplete.themes.css
  *= require normalize-rails
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  */
-
+@import "jquery-ui/autocomplete";
  /* color palet-> Blueberry #687A8F, Apricot #F7882F, Citrus #F7C331, AppleCore #DCC7AA */
 *{
   margin: 0;

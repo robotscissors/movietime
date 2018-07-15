@@ -19,7 +19,7 @@
           <li><%= link_to "People",person_index_path %></li>
           <li><%= link_to "Contact Us",welcome_contact_path %></li>
           <li><%= form_tag(search_index_path method: :post) do %>
-          <%= text_field_tag :query, params[:query], class: 'text-field'%>
+          <%= text_field_tag :query, params[:query], class: 'text-field', id: 'search_field' %>
           <%= submit_tag 'Search', class: 'btn-submit' %>
           <% end %></li>
       </nav>
@@ -33,5 +33,9 @@
       <p>Based on the movie database service API: <a href="https://www.themoviedb.org/">The Movie DB</a></p>
       <p>&copy;2018 Christopher Bazin</p>
     </footer>
+    <script>
+      $('#search_field').autocomplete
+        source: ['foo','bar'];
+    </script>
   </body>
 </html>

@@ -21,6 +21,7 @@ gem 'turbolinks'
 gem 'figaro'
 gem 'httparty'
 gem 'normalize-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'byebug'
