@@ -92,3 +92,16 @@ end
 </p>
 
 #### How did I make that happen?
+
+
+## The Design, UX and UI
+I knew just from the project goals and looking at the data that I wanted to make this a visual app. The fewer words on the page the better. You'll notice in all the #index actions the view consists of representations of the movie posters, TV posters or actor headshots.
+
+### The color schemes
+I wanted to have a color scheme that went with a variety of colors so I looked for color combinations that had a neutral background. So I choose the following as my theme. I kept my color choices to these four colors. By choosing colors earily on in the layout process it gave me confidence in designing the layout without worrying if colors were clashing.
+
+<img width="136" alt="Colors for project" src="https://user-images.githubusercontent.com/24664863/42781211-58af7bf0-88fa-11e8-887b-fe2b56e6acfc.png">
+
+### Using Sass instead of CSS
+Sass. I love it. I think the main advantage in this project was being able to nest selectors easily within HTML Semantic Elements and other selectors.
+
