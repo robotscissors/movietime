@@ -32,5 +32,19 @@ In hindsight, a better option might have been Sinatra. My experience has been th
 <img src="https://user-images.githubusercontent.com/24664863/42741712-8dbfa1b2-8869-11e8-95e4-7cf246273679.png" alt="Desktop Image"  height="450">&nbsp;<img src="https://user-images.githubusercontent.com/24664863/42741754-de73cbba-8869-11e8-9d6f-0f628f02dd50.png" alt="Mobile Image"  height="450">
 </p>
 
+#### How I achieved that?
+
+
 ### Upon searching for a TV show in the search bar, the user should see a list of shows whose title matches.
 <p align="center">
+<img src="https://user-images.githubusercontent.com/24664863/42742055-96eb33b6-886c-11e8-806b-076026ed50bc.png" height="450">
+</p>
+
+#### How does that work?
+
+### After clicking on a TV show, the user is taken to a page with more information about that show.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/24664863/42742149-80ffbf94-886d-11e8-990f-032522531640.png" height="450">
+</p>
+
+#### How did I make that happen?
