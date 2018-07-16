@@ -33,9 +33,9 @@ In hindsight, a better option might have been Sinatra. My experience has been th
 </p>
 
 #### How I achieved that?
-The first step was getting the API up and running. I knew that the entire project hindged on whether or not I could figure out how to get data from this outside source. Since the application itself had no stored data, I propsed that all the models communicated with the outside datasource as opposed to what we usually do which is query and get data from interal datasources.
+The first step was getting the API up and running. I knew that the entire project hindged on whether or not I could figure out how to get data from this outside source. Since the application itself had no stored data (no internal DB), the model portion of MVC was in charge of communicating with the outside datasource.
 
-The [HTTParty gem](https://github.com/jnunemaker/httparty) is amazing. Since most of my previous projects had never exposed me to consuming a REST API, I knew my first step was getting that up and running. This GEM returns JSON and beautifully is accessible via a hash. By including the gem in my gem file and then including in my class, I have access HTTParty's methods. I was surprised at how easy it was.
+The [HTTParty gem](https://github.com/jnunemaker/httparty) is amazing. Since most of my previous projects had never relied on consuming a REST API, I knew my first step getting a reponse. This GEM returns JSON and then is beautifully accessible via a hash. By including the gem in my gem file and then using the ````include HTTParty````in my class, I have access to HTTParty's methods. I was surprised at how easy it was.
 
 __My first Class (The Tv Class)__
 ````
@@ -84,6 +84,7 @@ end
 </p>
 
 #### How does that work?
+
 
 ### After clicking on a TV show, the user is taken to a page with more information about that show.
 <p align="center">
