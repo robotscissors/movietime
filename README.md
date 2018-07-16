@@ -128,7 +128,26 @@ The result is a hash of the matching criteria for a movie, TV show or actor.
 </p>
 
 #### How did I make that happen?
+Clicking on one of the images process a get request to this route ````tv#show```` and tagging on the tv_id parameter that is unique to every show. 
+````
+  def show
+    @tv_id = params[:tv_id].to_i
 
+    if @tv_id
+      @tv_program = Tv.one(@tv_id) #returns the details for one show\
+      @reviews = Tv.reviews(@tv_id)['results'].take(3) #take only 3
+    else
+      @errors = "Hmm, I don't know what happened here. Try again."
+    end
+  end
+````
+Upon checking the parameter's presence, it then fetches the program details by calling the Tv.one class method (written below). In addition, it also calls the Tv.reviews class method to obtain reviews (I ask for only three since pagination isn't being addressed in this MVP.
+
+````
+  def self.one(tv_id)
+    get("/tv/#{tv_id}",query: {})
+  end
+````
 
 ## The Design, UX and UI
 I knew just from the project goals and looking at the data that I wanted to make this a visual app. The fewer words on the page the better. You'll notice in all the #index actions the view consists of representations of the movie posters, TV posters or actor headshots.
@@ -182,3 +201,12 @@ No worries, I added the name to a default image, if the image is missing.
 
 <img width="1477" alt="Image of search results" src="https://user-images.githubusercontent.com/24664863/42787292-b913b4de-890e-11e8-8845-cb785f186be7.png">
 
+
+# What if I Had More Time?
+
+All-in-all the app meets the functional requirements. But there are still plenty of enhancements that can be completed:
+
+1. Autocomplete with category separation - most people know they are searching for Movie, Actor of TV show so it would be nice to be able to differentiate those during search.
+2. Improve the Mobile NAV bar. Although the app is repsonsive and looks O.K. on mobile, more can be done.
+3. Add some transitions on roll over of the images just to spice things up a little.
+4. Refactor the Sass files to improve readability.
