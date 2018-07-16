@@ -76,14 +76,50 @@ class WelcomeController < ApplicationController
 end
 ````
 
-
-
 ### Upon searching for a TV show in the search bar, the user should see a list of shows whose title matches.
 <p align="center">
 <img src="https://user-images.githubusercontent.com/24664863/42742055-96eb33b6-886c-11e8-806b-076026ed50bc.png" height="450">
 </p>
 
+I opted to use the search/multi option which allowed me to search the entire database of entries. Each media type has their own endpoint in the API, but I felt if I truly wanted to search the entire database, the search/multi would be the correct option.
+
+<img width="798" alt="image of the search/multi endpoint" src="https://user-images.githubusercontent.com/24664863/42782114-d20d363e-88fc-11e8-84e3-aba36642cd9d.png">
+
 #### How does that work?
+After someone submits from the search bar, a POST request is made to the search controller with the index action (search#index)
+
+````
+class SearchController < ApplicationController
+  def index
+    @search_query = params[:query]
+    @page = params[:page].to_i
+    @page = 1 if @page === 0
+    @search = Search.for(@search_query,@page)
+    @total_pages = @search['total_pages']
+    @total_results = @search['total_results']
+    @search_results = @search['results']
+    @errors = @search['errors']
+  end
+end
+````
+
+We take the search query-term that was submitted through the post and then use that as a parameter when calling the end point through search model.
+
+````
+class Search
+  include HTTParty
+
+  base_uri 'https://api.themoviedb.org/3'
+  default_params api_key: ENV['API_KEY']
+  format :json
+
+  def self.for(term, page)
+    get("/search/multi", query: {query: term, page: page})
+  end
+end
+````
+
+The result is a hash of the matching criteria for a movie, TV show or actor.
 
 
 ### After clicking on a TV show, the user is taken to a page with more information about that show.
@@ -105,3 +141,10 @@ I wanted to have a color scheme that went with a variety of colors so I looked f
 ### Using Sass instead of CSS
 Sass. I love it. I think the main advantage in this project was being able to nest selectors easily within HTML Semantic Elements and other selectors.
 
+Reasoning behind your technical choices. This may include trade-offs you might have made, anything you left out, and what you might do differently if you had more time to spend on the project
+
+### Displaying the data
+For a large part of the application we are displaying images for posters, TV covers and actor headshots. Arranging them using float was a little bit a of pain. Then, I was introduced to Flexbox. Flexbox is pretty cool, especially when it comes to organizing items. Now, it is a little unruley at times, probably because I am not an expert at it yet, but I can definately see the advantages of it's use.
+
+### Mobile resposiveness
+The application is mobile-responsive. That being said, if I had more time, I would work smarter on the navigation. I again used flexbox for the top nav instead of the goto choice of Bootstraps nav themes.
