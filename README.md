@@ -33,6 +33,49 @@ In hindsight, a better option might have been Sinatra. My experience has been th
 </p>
 
 #### How I achieved that?
+The first step was getting the API up and running. I knew that the entire project hindged on whether or not I could figure out how to get data from this outside source. Since the application itself had no stored data, I propsed that all the models communicated with the outside datasource as opposed to what we usually do which is query and get data from interal datasources.
+
+The [HTTParty gem](https://github.com/jnunemaker/httparty) is amazing. Since most of my previous projects had never exposed me to consuming a REST API, I knew my first step was getting that up and running. This GEM returns JSON and beautifully is accessible via a hash. By including the gem in my gem file and then including in my class, I have access HTTParty's methods. I was surprised at how easy it was.
+
+__My first Class (The Tv Class)__
+````
+class Tv
+  include HTTParty
+
+  base_uri 'https://api.themoviedb.org/3'
+  default_params api_key: ENV['API_KEY']
+  format :json
+
+  def self.popular_tv
+    get("/discover/tv", query: {sort_by: "popularity.desc"})
+  end
+
+  def self.all(page, sort)
+    get("/discover/tv", query: {sort_by: sort, page: page})
+  end
+
+  def self.one(tv_id)
+    get("/tv/#{tv_id}",query: {})
+  end
+
+  def self.reviews(tv_id)
+    get("/tv/#{tv_id}/reviews",query: {})
+  end
+end
+````
+
+The controller where all the coordination takes place is where I manage to take only the top 12 results for the homepage, why 12? Well it looks good!
+
+````
+class WelcomeController < ApplicationController
+  def index
+    @popular_tv = Tv.popular_tv['results'].take(12) #get top 12 for home page
+    @popular_movie = Movie.popular['results'].take(6)
+    @popular_people = Person.popular['results'].take(6)
+  end
+end
+````
+
 
 
 ### Upon searching for a TV show in the search bar, the user should see a list of shows whose title matches.
