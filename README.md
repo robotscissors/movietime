@@ -147,4 +147,4 @@ Reasoning behind your technical choices. This may include trade-offs you might h
 For a large part of the application we are displaying images for posters, TV covers and actor headshots. Arranging them using float was a little bit a of pain. Then, I was introduced to Flexbox. Flexbox is pretty cool, especially when it comes to organizing items. Now, it is a little unruley at times, probably because I am not an expert at it yet, but I can definately see the advantages of it's use.
 
 ### Mobile resposiveness
-The application is mobile-responsive. That being said, if I had more time, I would work smarter on the navigation. I again used flexbox for the top nav instead of the goto choice of Bootstraps nav themes.
+The application is mobile-responsive. That being said, if I had more time, I would work smarter on the navigation. I again used flexbox for the top nav instead of the go to choice of Bootstraps nav themes. Regardless, for this quick sprint, the nav is functional on mobile and responsive.
