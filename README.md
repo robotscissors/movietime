@@ -26,4 +26,11 @@ Ruby on Rails is ideal for this type of quick solution application. This choice 
 
 In hindsight, a better option might have been Sinatra. My experience has been that while Sinatra is light, there are many things we take for granted in Rails that tend to cause complications when you aren't paying close attention.
 
+## Meeting the Functional Requirements
+### Application, when first loaded, lists popular TV shows
+<p align="center">
+<img src="https://user-images.githubusercontent.com/24664863/42741712-8dbfa1b2-8869-11e8-95e4-7cf246273679.png" alt="Desktop Image"  height="450">&nbsp;<img src="https://user-images.githubusercontent.com/24664863/42741754-de73cbba-8869-11e8-9d6f-0f628f02dd50.png" alt="Mobile Image"  height="450">
+</p>
 
+### Upon searching for a TV show in the search bar, the user should see a list of shows whose title matches.
+<p align="center">
