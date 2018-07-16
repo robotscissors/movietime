@@ -148,3 +148,37 @@ For a large part of the application we are displaying images for posters, TV cov
 
 ### Mobile resposiveness
 The application is mobile-responsive. That being said, if I had more time, I would work smarter on the navigation. I again used flexbox for the top nav instead of the go to choice of Bootstraps nav themes. Regardless, for this quick sprint, the nav is functional on mobile and responsive.
+
+
+# Extra Credit
+
+## Include Movies
+As I mentioned above, using the ````search/multi```` endpoint, I had access to all media types. In my application, the main page features to top TV shows, the top Movies and the top Actors. In addition, the search controller peforms search on all these media types as well. 
+
+#### So was it a good choice to use search/multi?
+Well yes and no. It is a very easy catch all. However, if plans include to exlusively search one media over another, or use autocomplete to show categorized lists of search results, the multi endpoint may not have been the best choice. If I had more time with a clear roadmap, I think I would have opted to creating other models with specific search methods for each media type.
+
+## Attach Reviews to Each Show
+
+<img width="829" alt="TV Reviews endpoint" src="https://user-images.githubusercontent.com/24664863/42786833-9cc3b330-890c-11e8-8cdc-d964d230d85f.png">
+
+Although a complete review endpoint is available, I choose only to implement reviews for TV shows as indicated in the extra credit statement. To be clear, I am only returning the first page of reviews. But with more time, this could be expanded into multi page reviews with pagination.
+
+<img width="700" alt="Image of Reviews and Season info" src="https://user-images.githubusercontent.com/24664863/42786999-5a96a73c-890d-11e8-9e6f-489599b26c6a.png">
+
+### Also included Season information (if available)
+Since accessing the endpoint was so intuitive I decided to show the Season information as well. It was an simple addition from the details endpoint.
+
+### When a user searches an actor or actress, display their biography first.
+I also added actors to the list of searchable items. Once clicking on an actor's photo thier biography overview will be displayed along with the actor's name and a few other details.
+
+<img width="1427" alt="Actor Henry Cavill" src="https://user-images.githubusercontent.com/24664863/42787141-0da377a6-890e-11e8-9a77-dc4230e8cb6f.png">
+
+### Adding actor names to photos
+I noticed when actors were part of the search results, all that was displayed was their photo. It was hard to tell, not knowing the name of the actor, whether the search rendered the correct results. So through CSS I added the names of the actors as well.
+
+### But what if an image is missing? 
+No worries, I added the name to a default image, if the image is missing.
+
+<img width="1477" alt="Image of search results" src="https://user-images.githubusercontent.com/24664863/42787292-b913b4de-890e-11e8-8845-cb785f186be7.png">
+
