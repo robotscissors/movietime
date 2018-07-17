@@ -13,9 +13,9 @@
                 <%= link_to image_tag("image-not-available.jpg", :alt => "Image not available."), root_url + 'movie/show?' + {movie_id: result['id']}.to_param, method: :get  %>
                 <div class="bottom-left">
                   <%= "#{result['title']}" %>
-                </div>
+                </div>  <!-- title of movie -->
               <% end %>
-          </div>
+          </div>  <!-- profile-image -->
         <%  when 'tv' %>
           <div class = "profile-image">
               <% if result['poster_path'] %>
@@ -24,9 +24,9 @@
                 <%= link_to image_tag("image-not-available.jpg", :alt => "Image not available."), root_url + 'tv/show?' + {tv_id: result['id']}.to_param, method: :get   %>
                 <div class="bottom-left">
                   <%= "#{result['original_name']}" %>
-                </div>
+                </div>  <!-- title of tv show -->
               <% end %>
-          </div>
+          </div>  <!-- profile-image -->
         <%  when 'person' %>
             <div class = "profile-image">
               <% if result['profile_path'] %>
@@ -36,13 +36,12 @@
               <% end %>
             <div class="bottom-left">
               <%= "#{result['name']}" %>
-            </div>
-          </div>
+            </div>  <!-- title of actor -->
+          </div> <!-- profile-image -->
         <% end %>
-
-      </div>
+      </div> <!-- result-item -->
     <% end %>
-  </div>
+  </div> <!-- results -->
   <div class="pagination">
     <% 1.upto(@total_pages) do |x| %>
       <% if x === @page %>
@@ -51,7 +50,7 @@
       <%= link_to "#{x}", root_url + 'search/index?'+ {query: @search_query, page: x}.to_param, method: :get  %>
       <% end %>
     <% end %>
-  </div>
+  </div>  <!-- pagination -->
 <% else %>
   <h2>Ooops, something went terribly wrong!</h2>
   <% @errors.each do |error| %>

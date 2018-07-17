@@ -2,11 +2,11 @@
 <div class = "details">
   <div class = "detail-image">
     <%= image_tag("https://image.tmdb.org/t/p/w500/#{@movie['poster_path']}", :alt => "Image of #{@movie['title']}") if !@movie['poster_path'].nil? %>
-  </div>
+  </div> <!-- detail-image -->
   <h2><%= "#{@movie['title']}" %></h2>
   <p><%= "Movie status: #{@movie['status']}" %></p>
   <p><%= "Average: #{@movie['vote_average']}" %></p>
   <p><%= "Relase Date: #{@movie['release_date']}" %></p>
   <p><%= "#{@movie['overview']}" %></p>
-</div>
+</div> <!-- details -->
 <div style="clear:both"></div>

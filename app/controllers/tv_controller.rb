@@ -20,6 +20,4 @@ class TvController < ApplicationController
       @errors = "Hmm, I don't know what happened here. Try again."
     end
   end
-
-
 end

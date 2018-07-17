@@ -4,8 +4,8 @@
 <% @all_tv_programs.each do |program| %>
   <%= link_to image_tag("https://image.tmdb.org/t/p/w200/#{program['poster_path']}", :alt => "Image of #{program['original_name']}"), root_url + 'tv/show?' + {tv_id: program['id']}.to_param, method: :get %>
 <% end %>
-</div>
+</div> <!-- popularX5 -->
 <div class="more">
   <%= link_to "Back", root_url + 'tv/index?' + {page: @back_page, param: @sort}.to_param, class: "previous", method: :get if @back_page %>
   <%= link_to "Next", root_url + 'tv/index?' + {page: @next_page, param: @sort}.to_param, class: "next", method: :get %>
-</div>
+</div> <!-- more -->

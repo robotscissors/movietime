@@ -23,5 +23,4 @@ RSpec.describe "welcome/index.html.erb", type: :view do
       expect(rendered).to match /The Hottest Actors/
     end
   end
-
 end

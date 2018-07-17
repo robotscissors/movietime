@@ -21,13 +21,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   height: 100%; /* makes sure our HTML takes up 100% of the browser window */
   font-size: 100%;
 }
+
 ul, nav{
   list-style: none;
 }
+
 body {
   font-family: 'Oswald','Open Sans'; /* sets our font to the "Open Sans" typeface */
   color: black;             /* sets the text color to white */
@@ -119,28 +122,33 @@ main body items
   margin: 0 auto;
   max-width: 1300px;
 }
+
 p {
   font-family: 'Oswald','Open Sans';
   margin-bottom: 10px;
-}
-p.subline {
-  margin-bottom: 10px;
+  .subline {
+    margin-bottom: 10px;
+  }
 }
 
 h1, h2 {
   font-family: 'Anton', sans-serif;
 }
+
 h1 {
   font-size: 4rem;
   margin-bottom: 4px;
 }
+
 h2 {
   margin-top: 50px;
 }
+
 .subline {
   font-size: 1.5rem;
   font-family: 'Anton', sans-serif;
 }
+
 .more {
   color: #000;
   text-align: right;
@@ -169,15 +177,16 @@ h2 {
       border-radius: 50%;
   }
 }
+
 .page-pad-20rem {
   padding-bottom: 20rem;
 }
+
 .special-message p {
   font-size: 1.5rem;
   line-height: 2rem;
   padding-bottom: 1rem;
 }
-
 /*--------------
 footer
 --------------*/
@@ -192,7 +201,6 @@ footer {
   align-items: center;
   margin-top: 100px;
 }
-
 /*-----------------
 mobile responsiveness
 -------------------*/

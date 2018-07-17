@@ -8,6 +8,4 @@ class Search
   def self.for(term, page)
     get("/search/multi", query: {query: term, page: page})
   end
-
-
 end

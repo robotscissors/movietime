@@ -18,5 +18,4 @@ RSpec.describe "person/index.html.erb", type: :view do
       expect(@people).not_to be_empty
     end
   end
-
 end

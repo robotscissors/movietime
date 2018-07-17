@@ -4,12 +4,12 @@
     <% if @person['profile_path'] %>
       <%= image_tag("https://image.tmdb.org/t/p/w500/#{@person['profile_path']}", :alt => "Image of #{@person['name']}") if !@person['profile_path'].nil? %>
     <% end %>
-  </div>
+  </div>  <!-- detail image -->
   <h2><%= @person['name'] %></h2></p>
   <p><%= "Birthday: #{@person['birthday']}" if @person['birthday'] %></p>
   <p><%= "Place of Birth: #{@person['place_of_birth']}" if @person['place_of_birth']%></p>
   <p><%= "Died on: #{@person['deathday']}" if @person['deathday'] %></p>
   <h3>Biography:</h3>
   <p><%= @person['biography'] %></p>
-</div>
+</div>  <!-- details -->
 <div style="clear:both"></div>

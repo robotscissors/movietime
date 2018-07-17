@@ -33,6 +33,5 @@ RSpec.describe Tv, type: :model do
       @tv = Tv.reviews(@tv_id)
       expect(@tv).not_to be_empty #there are reviews for breaking bad
     end
-
   end
 end

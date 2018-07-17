@@ -2,7 +2,7 @@
 <div class = "details">
   <div class = "detail-image">
     <%= image_tag("https://image.tmdb.org/t/p/w500/#{@tv_program['poster_path']}", :alt => "Image of #{@tv_program['original_name']}") if !@tv_program['poster_path'].nil? %>
-  </div>
+  </div>  <!-- detail-image -->
   <h2><%= "#{@tv_program['original_name']}" %></h2>
   <p>[<%= @tv_program['status'] %>]</p>
   <p><%= "Vote Average: #{@tv_program['vote_average']}" %></p>
@@ -17,17 +17,17 @@
   <% else %>
     No reviews.
   <% end %>
-</div>
+</div> <!-- details -->
 <div style="clear:both"></div>
 <h3>Season Information</h3>
-  <% @tv_program['seasons'].each do |season| %>
-    <p>
-      <h4><%= season['name']%></h4>
-      <p class = "series-info"><% if season['overview'].empty? %>
-        <%= "- No additional information" %>
-      <% else %>
-        <%= "#{season['overview']}" %>
-      <% end %>
-      </p>
+<% @tv_program['seasons'].each do |season| %>
+  <p>
+    <h4><%= season['name']%></h4>
+    <p class = "series-info"><% if season['overview'].empty? %>
+      <%= "- No additional information" %>
+    <% else %>
+      <%= "#{season['overview']}" %>
+    <% end %>
     </p>
-  <% end %>
+  </p>
+<% end %>
