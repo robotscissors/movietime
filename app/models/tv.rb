@@ -1,7 +1,7 @@
 class Tv
   include HTTParty
 
-  base_uri 'https://api.themoviedb.org/3'
+  base_uri 'https://api.themoviedb.org/3/account'
   default_params api_key: ENV['API_KEY']
   format :json
 
